@@ -6,6 +6,8 @@ import { Button } from "../components/ui/button";
 import { Textarea } from "../components/ui/textarea";
 import { ScrollArea } from "../components/ui/scroll-area";
 import { motion } from "framer-motion";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 export default function Home() {
   const [messages, setMessages] = useState([]);
@@ -69,7 +71,9 @@ export default function Home() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              <p className="text-sm">{msg.content}</p>
+              <ReactMarkdown remarkPlugins={[remarkGfm]} className="text-sm">
+                {msg.content}
+              </ReactMarkdown>
             </motion.div>
           ))}
           <div ref={chatRef} />
