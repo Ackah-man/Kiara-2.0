@@ -76,7 +76,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              <ReactMarkdown remarkPlugins={[remarkGfm]} className="text-sm prose prose-sm prose-code:text-slate-50 prose-ul:text-slate-50">
+              <ReactMarkdown remarkPlugins={[remarkGfm]} className="text-sm prose prose-sm prose-code:text-slate-50 prose-ol:text-slate-50 prose-ul:text-slate-50">
                 {msg.content}
               </ReactMarkdown>
             </motion.div>
